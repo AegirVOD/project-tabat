@@ -1,6 +1,5 @@
 import * as React from 'react'
 import logo from '../images/tabat_logo.png'
-import StaticImage from "gatsby-plugin-image"
 import { FaBars } from "react-icons/fa"
 
 const Navbar = () => {

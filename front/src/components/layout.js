@@ -1,13 +1,15 @@
-import * as React from 'react'
-import Navbar from './navbar'
+import * as React from "react"
+import Navbar from "./navbar"
+import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ location, children }) => {
     return (
         <div>
-          <Navbar />
+          <Navbar location={location}/>
           <main>
             {children}
           </main>
+          <Footer />
         </div>
     )
 }

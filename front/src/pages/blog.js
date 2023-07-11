@@ -1,10 +1,37 @@
 import * as React from "react"
 import Layout from "../components/layout"
+import BlogText from "../components/blogText"
 
 export default function Blog() {
+    const posts = [
+        {
+            title: 'First blog post',
+            date: 'July 1, 2023',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod quis nulla lacinia dictum. Quisque vestibulum porta orci. Fusce posuere pellentesque tempor. Pellentesque egestas purus ipsum, eget porta lacus laoreet eget. Duis quis lectus mattis, tempor neque vitae, efficitur lorem. Phasellus rutrum ipsum sed leo malesuada eleifend. Maecenas velit neque, bibendum sed efficitur quis, euismod et felis. Duis convallis non enim quis interdum. Proin dui leo, pharetra quis mauris lobortis, eleifend dictum tellus. Nullam mollis molestie convallis. Sed ut viverra nibh. Vivamus sollicitudin elementum felis a imperdiet. Donec gravida ac sem id aliquet.Aliquam erat volutpat. Nulla rhoncus felis eu massa sagittis, mattis aliquam quam dictum. Suspendisse potenti. Praesent id massa sed lectus consequat molestie. Nunc facilisis mattis diam ac commodo. Sed vel sapien vel justo malesuada porttitor scelerisque a nulla. Donec commodo id lectus ut bibendum. Fusce porta ex tortor. Ut volutpat, magna at molestie placerat, lacus augue dignissim nunc, quis rutrum purus ante eu nisl. Mauris finibus maximus elementum. Fusce urna purus, consectetur viverra finibus vel, fringilla ut odio.Curabitur suscipit, sem vel feugiat venenatis, nisi purus auctor dui, quis viverra massa ligula non purus. Praesent ullamcorper feugiat tempus. Nullam vel suscipit augue, quis pulvinar nibh. Vivamus euismod, eros et porta accumsan, nisi nulla luctus magna, convallis aliquam turpis purus sed ex. Nullam dictum justo vitae velit efficitur, a condimentum risus tincidunt. Phasellus vel dignissim est. Maecenas fermentum ex vel sem eleifend ultrices. Etiam rutrum sit amet nibh quis lacinia. Suspendisse vel turpis in risus ornare mattis. Nullam nec risus non massa efficitur eleifend at non ex.Praesent efficitur sollicitudin felis, ac facilisis quam iaculis imperdiet. Mauris accumsan magna ipsum, id faucibus ligula interdum quis. Mauris non massa sit amet diam pharetra faucibus et hendrerit nunc. Nam ac arcu finibus, tristique felis vitae, varius diam. Aenean vitae finibus neque. Donec rutrum mauris tincidunt, rhoncus velit non, maximus quam. Ut dignissim tortor eros, id fermentum risus feugiat vitae. Morbi ac viverra erat. Suspendisse ac dolor sagittis, tincidunt risus sed, sollicitudin justo. Fusce a tempor elit, ac eleifend justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis euismod non metus eu molestie.Nunc vulputate, orci in tempor condimentum, sapien enim aliquet enim, et sagittis nisi nulla ut dolor. Nam vestibulum, odio sit amet consequat viverra, sem urna scelerisque eros, suscipit eleifend nisi sem vitae nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. In congue ornare fringilla. Pellentesque in purus non dui aliquam varius id eu nibh. Nunc quis vulputate ante, eu elementum mauris. Ut aliquet, ante interdum volutpat pretium, ligula urna accumsan dui, sed luctus purus nibh ac tellus. Sed eget purus nibh. Proin ipsum leo, venenatis pellentesque vestibulum et, accumsan quis felis. Curabitur bibendum tincidunt arcu, et auctor ipsum consequat bibendum',
+        },
+        {
+            title: 'Second blog post',
+            date: 'July 8, 2023',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse euismod quis nulla lacinia dictum. Quisque vestibulum porta orci. Fusce posuere pellentesque tempor. Pellentesque egestas purus ipsum, eget porta lacus laoreet eget. Duis quis lectus mattis, tempor neque vitae, efficitur lorem. Phasellus rutrum ipsum sed leo malesuada eleifend. Maecenas velit neque, bibendum sed efficitur quis, euismod et felis. Duis convallis non enim quis interdum. Proin dui leo, pharetra quis mauris lobortis, eleifend dictum tellus. Nullam mollis molestie convallis. Sed ut viverra nibh. Vivamus sollicitudin elementum felis a imperdiet. Donec gravida ac sem id aliquet.Aliquam erat volutpat. Nulla rhoncus felis eu massa sagittis, mattis aliquam quam dictum. Suspendisse potenti. Praesent id massa sed lectus consequat molestie. Nunc facilisis mattis diam ac commodo. Sed vel sapien vel justo malesuada porttitor scelerisque a nulla. Donec commodo id lectus ut bibendum. Fusce porta ex tortor. Ut volutpat, magna at molestie placerat, lacus augue dignissim nunc, quis rutrum purus ante eu nisl. Mauris finibus maximus elementum. Fusce urna purus, consectetur viverra finibus vel, fringilla ut odio.Curabitur suscipit, sem vel feugiat venenatis, nisi purus auctor dui, quis viverra massa ligula non purus. Praesent ullamcorper feugiat tempus. Nullam vel suscipit augue, quis pulvinar nibh. Vivamus euismod, eros et porta accumsan, nisi nulla luctus magna, convallis aliquam turpis purus sed ex. Nullam dictum justo vitae velit efficitur, a condimentum risus tincidunt. Phasellus vel dignissim est. Maecenas fermentum ex vel sem eleifend ultrices. Etiam rutrum sit amet nibh quis lacinia. Suspendisse vel turpis in risus ornare mattis. Nullam nec risus non massa efficitur eleifend at non ex.Praesent efficitur sollicitudin felis, ac facilisis quam iaculis imperdiet. Mauris accumsan magna ipsum, id faucibus ligula interdum quis. Mauris non massa sit amet diam pharetra faucibus et hendrerit nunc. Nam ac arcu finibus, tristique felis vitae, varius diam. Aenean vitae finibus neque. Donec rutrum mauris tincidunt, rhoncus velit non, maximus quam. Ut dignissim tortor eros, id fermentum risus feugiat vitae. Morbi ac viverra erat. Suspendisse ac dolor sagittis, tincidunt risus sed, sollicitudin justo. Fusce a tempor elit, ac eleifend justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis euismod non metus eu molestie.Nunc vulputate, orci in tempor condimentum, sapien enim aliquet enim, et sagittis nisi nulla ut dolor. Nam vestibulum, odio sit amet consequat viverra, sem urna scelerisque eros, suscipit eleifend nisi sem vitae nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. In congue ornare fringilla. Pellentesque in purus non dui aliquam varius id eu nibh. Nunc quis vulputate ante, eu elementum mauris. Ut aliquet, ante interdum volutpat pretium, ligula urna accumsan dui, sed luctus purus nibh ac tellus. Sed eget purus nibh. Proin ipsum leo, venenatis pellentesque vestibulum et, accumsan quis felis. Curabitur bibendum tincidunt arcu, et auctor ipsum consequat bibendum.',
+        },
+    ];
+
+
     return (
-        <Layout>
-          <div>THIS IS BLOG PAGE</div>
+        <Layout location={'blog'}>
+          <div className="font-sans text-gray-900 antialiased">
+            <div className="flex flex-col justify-start items-center min-h-screen py-2">
+              <div className="flex flex-col w-full md:w-2/3 lg:w-1/2 p-4 space-y-8">
+                {posts.map((post, index) => (
+                    <div className="border border-gray-200 p-6 rounded-md shadow-sm" key={index}>
+                      <h2 className="text-2xl font-bold text-gray-700">{post.title}</h2>
+                      <p className="text-gray-500">{post.date}</p>
+                      <BlogText maxLength={300}>{post.content}</BlogText>
+                    </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </Layout>
     )
 }

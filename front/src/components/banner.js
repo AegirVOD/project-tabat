@@ -1,10 +1,10 @@
 import * as React from "react"
-import bgImage from '../images/architect.jpg'
+import bgImage from "../images/architect.jpg"
 
 const Banner = () => {
     return (
        <div
-         className="relative bg-cover bg-center text-center text-white py-20"
+         className="relative bg-cover bg-center text-center text-white py-20 px-5"
          style={{
              backgroundImage: `url(${bgImage})`
          }}

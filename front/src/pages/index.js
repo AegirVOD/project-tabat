@@ -2,7 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Banner from "../components/banner"
 import ActivityBlock from "../components/activityBlock"
-import bgImage from '../images/architect.jpg'
+import bgImage from "../images/architect.jpg"
 
 const activities = [
     {
@@ -22,6 +22,7 @@ const activities = [
     },
     {
         image: require('../images/demolition.jpg').default,
+
         title: "Démolition",
         description: "Destruction d'un ouvrage ; peut être suivie d'une valorisation (recyclage) des matériaux en résultant."
     },
@@ -34,19 +35,22 @@ const activities = [
 
 const IndexPage = () => {
     return (
-        <Layout>
+        <Layout location='index'>
           <Banner />
           <div className="space-y-4 flex flex-col items-center mt-4">
             <h2 className="text-3xl self-center">Nos Activités</h2>
-            {
-                activities.map(activity => {
-                   return  <ActivityBlock
-                      image={activity.image}
-                      title={activity.title}
-                      description={activity.description}
-                    />
-                })
-            }
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 justify-items-start">
+              {
+                  activities.map((activity, index) => {
+                      return  <ActivityBlock
+                                             key={index}
+                                             image={activity.image}
+                                             title={activity.title}
+                                             description={activity.description}
+                               />
+                  })
+              }
+            </div>
           </div>
         </Layout>
     )
